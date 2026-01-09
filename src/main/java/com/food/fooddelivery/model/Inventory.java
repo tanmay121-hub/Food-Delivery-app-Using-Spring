@@ -7,7 +7,10 @@ public class Inventory {
     private String desc;
     private String image;
 
-    public Inventory() {}
+    public Inventory(long itemId,String itemName) {
+        this.itemId = itemId;
+        this.itemName = itemName;
+    }
 
     public Inventory(long itemId, String itemName, int stock, String desc, String image) {
         this.itemId = itemId;
@@ -15,6 +18,10 @@ public class Inventory {
         this.stock = stock;
         this.desc = desc;
         this.image = image;
+    }
+
+    public Inventory() {
+
     }
 
     public long getItemId() { return itemId; }
