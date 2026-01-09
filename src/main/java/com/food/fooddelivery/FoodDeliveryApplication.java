@@ -37,6 +37,8 @@ public class FoodDeliveryApplication {
         Inventory inventory = new Inventory(1,"Pizza");
         InventoryDao inventoryDao = new InventoryDao(jdbcTemplate);
         inventoryDao.save(inventory);
+        inventoryDao.findPage(1,2);
+        System.out.println(inventoryDao.findAll());
 
 
 //

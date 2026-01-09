@@ -37,8 +37,8 @@ public class InventoryDao {
 
     RowMapper<Inventory> inventoryRowMapper = ((rs, rowNum) -> {
         Inventory i = new Inventory();
-        i.setItemId(rs.getInt("id"));
-        i.setItemName(rs.getString("name"));
+        i.setItemId(rs.getInt("item_id"));
+        i.setItemName(rs.getString("item_name"));
         return i;
     });
     public List<Inventory> findAll(){
@@ -58,7 +58,7 @@ public class InventoryDao {
 
         return jdbcTemplate.query(sql, inventoryRowMapper, pageSize, offset);
     }
-    void deleteByzid(int id){
-        jdbcTemplate.update("DELETE FROM inventory WHERE id =?",id);
+    void deleteByid(int id){
+        jdbcTemplate.update("DELETE FROM inventory WHERE item_id =?",id);
     }
 }
